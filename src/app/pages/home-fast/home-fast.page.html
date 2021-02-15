@@ -1,0 +1,177 @@
+<app-menu
+  name="{{user.name}}"
+  sexo="{{user.sexo}}"
+  email="{{user.email}}"
+></app-menu>
+<app-segment></app-segment>
+<ion-content>
+  <div class="container">
+    <div class="container-back">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+        <path
+          fill="#00bcc5"
+          fill-opacity="1"
+          d="M0,64L60,53.3C120,43,240,21,360,53.3C480,85,600,171,720,218.7C840,267,960,277,1080,256C1200,235,1320,181,1380,154.7L1440,128L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"
+        ></path>
+      </svg>
+    </div>
+    <div class="heart-position">
+      <div class="lds-heart"><div></div></div>
+    </div>
+
+    <ion-buttons class="butn-home">
+      <ion-button (click)="onMenu()">
+        <ion-icon
+          color="fhospitalsecond"
+          slot="icon-only"
+          name="menu"
+        ></ion-icon>
+      </ion-button>
+    </ion-buttons>
+
+    <div class="container-2">
+      <div class="hello">
+        <h1>Hello,</h1>
+        <ion-label
+          >{{user.name.split(" ")[0] }}! <img src="assets/pildora.svg"
+        /></ion-label>
+        <!--<img src="assets/heart.svg">-->
+      </div>
+
+      <div class="message">
+        <h1>FastHospital</h1>
+
+        <ion-row>
+          <ion-col size="7">
+            <p>
+              Donde quiera que se ama el arte de la medicina se ama también a la
+              humanidad.
+            </p>
+          </ion-col>
+          <ion-col size="5">
+            <img
+              style="width: 150%px"
+              src="../../../assets/doctor-protection.svg"
+            />
+          </ion-col>
+        </ion-row>
+      </div>
+      <ion-label>
+        <div *ngIf="pacientes !=[]" class="slides ion-margin-bottom">
+          <ion-slides [options]="slidesOptions">
+            <ion-slide *ngFor="let paciente of pacientes; let i = index">
+              <ion-card>
+                <ion-card-header>
+                  <div class="main">
+                    <img
+                      src="../../../assets/diversity_avatar_girl_woman_black_hair_people_icon_159085.svg"
+                    />
+                  </div>
+                  <div class="bottom-main">
+                    <ion-item style="border-radius: 1px;" class="">
+                      <ion-label>
+                        <h2>{{paciente.NombrePaciente}}</h2>
+                        <h3>{{paciente.EmailPaciente}}</h3>
+                      </ion-label>
+                    </ion-item>
+                  </div>
+                </ion-card-header>
+                <ion-card-content class="ion-text-left">
+                  
+                  <ion-card-subtitle class="ion-text-right"
+                    >{{i+1}}/{{pacientes.length}}</ion-card-subtitle
+                  >
+                  <ion-progress-bar color="fhospitalsecond"
+                    value="{{(i+1)/(pacientes.length)}}"
+                  ></ion-progress-bar>
+                </ion-card-content>
+              </ion-card>
+            </ion-slide>
+          </ion-slides>
+        </div>
+        <h2>Opciones</h2>
+      </ion-label>
+      <div style="margin-top: 10px" class="contenedor-icon">
+        <ion-grid>
+          <ion-row>
+            <ion-col class="col">
+              <div routerLink="/consulta" class="contenedor-categoria">
+                <ion-col size="6">
+                  <img
+                    class="categorias"
+                    src="../../../assets/icons8_form_50px_1.png"
+                  />
+                </ion-col>
+
+                <ion-label>Pacientes</ion-label>
+              </div>
+            </ion-col>
+            <ion-col class="col">
+              <div routerLink="/agregar-paciente" class="contenedor-categoria">
+                <ion-col size="6">
+                  <img
+                    class="categorias"
+                    src="../../../assets/icons8_add_new_50px.png"
+                  />
+                </ion-col>
+
+                <ion-label>Agregar Paciente</ion-label>
+              </div>
+            </ion-col>
+            <ion-col class="col">
+              <div routerLink="/perfil-doctor" class="contenedor-categoria">
+                <ion-col size="6">
+                  <img
+                    class="categorias"
+                    src="../../../assets/icons8_edit_profile_50px_1.png"
+                  />
+                </ion-col>
+
+                <ion-label>Perfil</ion-label>
+              </div>
+            </ion-col>
+          </ion-row>
+          <ion-row>
+            <ion-col class="col" offset="1.5">
+              <div
+                (click)="modalMostrarConsultas('')"
+                class="contenedor-categoria"
+              >
+                <ion-col size="3">
+                  <img
+                    class="categorias"
+                    src="../../../assets/icons8_edit_profile_50px_1.png"
+                  />
+                </ion-col>
+                <ion-label
+                  >Gestionar
+                  <h3>Consultas</h3></ion-label
+                >
+              </div>
+            </ion-col>
+            <ion-col class="col">
+              <div
+                (click)="modalAgregarConsulta('')"
+                class="contenedor-categoria"
+              >
+                <ion-col size="3">
+                  <img
+                    class="categorias"
+                    src="../../../assets/icons8_edit_profile_50px_1.png"
+                  />
+                </ion-col>
+                <ion-label>
+                  Resportes</ion-label
+                >
+              </div>
+            </ion-col>
+            <ion-col size="1.5"><div></div></ion-col>
+          </ion-row>
+        </ion-grid>
+      </div>
+    </div>
+
+    <!------------------------------------------------------------------------------------------------------------------------------------------------------>
+    
+  </div>
+</ion-content>

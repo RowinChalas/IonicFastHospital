@@ -1,0 +1,7 @@
+{
+  "name": "FastHospital",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

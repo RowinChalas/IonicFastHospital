@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "fasthospital-618c2": {
+      "hosting": {
+        "app": [
+          "fasthospital-618c2"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,35 @@
+ion-content {
+  ion-slides {
+
+    ion-slide {
+      padding: 26px;
+      display: block;
+      text-align: center;
+      ion-img {
+        width: 75%;
+        padding-top: 0px;
+        margin: auto;
+      }
+      text-align: left;
+      h3 {
+        font-size: 36px;
+        font-weight: lighter;
+        color: #0b2655;
+      }
+
+      p{
+          color: #fff;
+      }
+    }
+  }
+
+}
+ion-button{
+  height: 50px;
+}
+
+
+
+.bottom-svg{
+    margin-top: -92px;
+}
